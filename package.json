@@ -1,0 +1,20 @@
+{
+  "name": "elib-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "elibrary-parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Grigory Kosheev <grigory@kosheev.com>",
+  "license": " Apache-2.0",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "lodash": "^4.17.4",
+    "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
+}
