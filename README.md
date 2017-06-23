@@ -52,9 +52,7 @@ Config example for ningx:
 location /elibrary {
 	proxy_pass       http://elibrary.ru;
 	rewrite /elibrary(.*) /$1  break;
-	proxy_redirect default;
-	proxy_redirect / /elibrary/;
-	proxy_redirect elibrary.ru $host/elibrary;
+	proxy_redirect https://elibrary.ru http://$host/elibrary;
 	proxy_cookie_domain .elibrary.ru $host;
 }
 ```
