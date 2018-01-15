@@ -169,10 +169,11 @@ module.exports = function (options) {
 							var authorElements = title.split(/\s+/);
 							author.lastName = authorElements[0];
 							if (authorElements.length > 1) {
-								var nameElements = authorElements[1].split('.');
-								author.firstNameInitial = nameElements[0];
-								if (nameElements.length > 1) {
-									author.extraNameInitial = nameElements[1];
+								author.firstName = authorElements[1];
+								author.firstNameInitial = authorElements[1][0];
+								if (authorElements.length > 2) {
+									author.extraName = authorElements[2];
+									author.extraNameInitial = authorElements[2][0];
 								}
 							}
 							content.authors.push(author);
