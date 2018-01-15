@@ -182,7 +182,7 @@ module.exports = function (options) {
 						// parse source description
 						$('table[width="550"] td[valign="middle"]').each(function (index, element) {
 							if (index === 1) {
-								content.source = $(element).text().trim().replace(/\r\n+/g, ', ');
+								content.source = $(element).text().trim().replace(/(\r\n)+/g, ', ');
 							}
 						});
 						
