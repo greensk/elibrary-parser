@@ -204,7 +204,7 @@ module.exports = function (options) {
 							content.issue = issueResult[1];
 						}
 						
-						var yearRe = /Год издания:\s*(.*)\r\n/m;
+						var yearRe = /Год:\s*(.*)\r\n/m;
 						var yearResult = yearRe.exec(sourceParamsContent);
 						if (yearResult && yearResult.length > 1) {
 							content.year = yearResult[1];
