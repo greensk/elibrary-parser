@@ -184,7 +184,11 @@ module.exports = function (options) {
 							if (index === 1) {
 								content.source = $(element).contents().map(function (index, element) {
 									return $(element).text()
-								}).toArray().filter(e => !!e).map(e => e.trim()).join(' ').trim();
+								}).toArray().filter(function (e) {
+									return !!e
+								}).map(function (e) {
+									return e.trim()
+								}).join(' ').trim();
 							}
 						});
 						
