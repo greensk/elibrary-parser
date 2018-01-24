@@ -166,7 +166,7 @@ module.exports = function (options) {
 						$("span[style='white-space: nowrap'] b").each(function (index, element) {
 							var title = $(element).text();
 							var author = {title: title};
-							var authorElements = title.split(/\s+/);
+							var authorElements = title.split(/\s+|\./);
 							author.lastName = authorElements[0];
 							if (authorElements.length > 1) {
 								author.firstName = authorElements[1];
