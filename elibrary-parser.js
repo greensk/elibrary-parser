@@ -160,19 +160,19 @@ module.exports = function (options) {
 						var $ = cheerio.load(result.text);
 						
 						// parse article title
-						var content = {authors: [], title: $('.bigtext b').text()};
+						var content = {authors: [], title: $('title').text()};
 						
 						// parse authors list
 						$("span[style='white-space: nowrap'] b").each(function (index, element) {
 							var title = $(element).text();
 							var author = {title: title};
 							var authorElements = title.split(/\s+|\./);
-							author.lastName = authorElements[0];
+							author.lastName = authorElements[0].split('-').map(_.capitalize).join('-');
 							if (authorElements.length > 1) {
-								author.firstName = authorElements[1];
+								author.firstName = _.capitalize(authorElements[1]);
 								author.firstNameInitial = authorElements[1][0];
 								if (authorElements.length > 2) {
-									author.extraName = authorElements[2];
+									author.extraName = _.capitalize(authorElements[2]);
 									author.extraNameInitial = authorElements[2][0];
 								}
 							}
