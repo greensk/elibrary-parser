@@ -180,7 +180,7 @@ module.exports = function (options) {
 						});
 						
 						// parse source description
-						$('table[width="550"] td[valign="middle"]').each(function (index, element) {
+						$('table[width="550"] td[valign="middle"] a').each(function (index, element) {
 							if (index === 1) {
 								content.source = $(element).contents().map(function (index, element) {
 									return $(element).text()
