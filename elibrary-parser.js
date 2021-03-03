@@ -11,7 +11,7 @@ module.exports = function (options) {
 		return superagent.agent ? superagent.agent() : superagent;
 	};
 	var parser = {};
-	var baseUrl = options.url ? options.url : 'http://elibrary.ru';
+	var baseUrl = options.url ? options.url : 'https://www.elibrary.ru';
 	parser.url = baseUrl;
 	parser.getAuthor = function (id) {
 		var authorUrl = baseUrl + '/author_profile.asp?id=' + id;
@@ -163,7 +163,7 @@ module.exports = function (options) {
 						var content = {authors: [], title: $('title').text()};
 						
 						// parse authors list
-						$("span[style='white-space: nowrap'] b").each(function (index, element) {
+						$("div[style='display: inline-block; white-space: nowrap'] b").each(function (index, element) {
 							var title = $(element).text();
 							var author = {title: title};
 							var authorElements = title.split(/\s+|\./);
@@ -210,7 +210,7 @@ module.exports = function (options) {
 							content.issue = issueResult[1];
 						}
 						
-						var yearRe = /(Годы|Год издания):\s*(.*)\r\n/m;
+						var yearRe = /(Годы|Год издания|Год):\s*(.*)\r\n/m;
 						var yearResult = yearRe.exec(sourceParamsContent);
 						if (yearResult && yearResult.length > 1) {
 							content.year = yearResult[2];
