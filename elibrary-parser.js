@@ -180,17 +180,7 @@ module.exports = function (options) {
 						});
 						
 						// parse source description
-						$('table[width="550"] td[valign="middle"] a').each(function (index, element) {
-							if (index === 1) {
-								content.source = $(element).contents().map(function (index, element) {
-									return $(element).text()
-								}).toArray().filter(function (e) {
-									return !!e
-								}).map(function (e) {
-									return e.trim()
-								}).join(' ').trim();
-							}
-						});
+						content.source = $('table[width="550"] td[width="504"] a[title]:nth-child(2)').text();
 						
 						// parse source params
 						var sourceParamsContent = '';
