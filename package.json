@@ -10,7 +10,7 @@
   "license": " Apache-2.0",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.1.2",
     "lodash": "^4.17.4",
     "superagent": "^3.5.2"
   },
