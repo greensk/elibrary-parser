@@ -12,7 +12,8 @@
     "bluebird": "^3.5.0",
     "cheerio": "^0.22.0",
     "lodash": "^4.17.4",
-    "superagent": "^3.5.2"
+    "superagent": "^3.5.2",
+    "superagent-proxy": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

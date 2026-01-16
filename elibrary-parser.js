@@ -2,6 +2,9 @@ var superagent = require('superagent');
 var Promise = require('bluebird');
 var cheerio = require('cheerio');
 var _ = require('lodash');
+require('superagent-proxy')(superagent);
+
+console.log(process.env)
 
 module.exports = function (options) {
 	if (!options) {
